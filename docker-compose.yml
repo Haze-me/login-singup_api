@@ -1,5 +1,3 @@
-
-
 version: "3.8"
 
 services:
@@ -8,18 +6,21 @@ services:
     container_name: auth_service
     command: gunicorn auth_service.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/app
+      - ./src:/app
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DEBUG=0
       - SECRET_KEY=${SECRET_KEY}
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/auth_service_db
+    env_file:
+      - .env
 
   db:
-    image: postgres:14
+    image: postgres:alpine 
     container_name: auth_db
     environment:
       POSTGRES_USER: postgres
@@ -27,3 +28,8 @@ services:
       POSTGRES_DB: auth_service_db
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      retries: 5
+      start_period: 10s
