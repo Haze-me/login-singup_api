@@ -152,3 +152,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+
+# setting db from docker-compose.yml file
+# import dj_database_url
+# from decouple import config  # For environment variables
+
+# DATABASES = {
+#     'default': dj_database_url.config(default=config('DATABASE_URL'))
+# }
