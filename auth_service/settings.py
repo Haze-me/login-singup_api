@@ -154,10 +154,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-# setting db from docker-compose.yml file
-# import dj_database_url
-# from decouple import config  # For environment variables
+import os
 
-# DATABASES = {
-#     'default': dj_database_url.config(default=config('DATABASE_URL'))
-# }
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
