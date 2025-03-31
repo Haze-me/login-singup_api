@@ -1,18 +1,10 @@
 
 from rest_framework import serializers
-from .models import OrderInfo, BasicInfo, EmploymentInfo
+from .models import StaffInfo
 
-class BasicSerializer(serializers.ModelSerializer):
+class StaffSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BasicInfo
+        model = StaffInfo
         fields = '__all__'
 
-class OrderSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = OrderInfo
-        fields = '__all__'
 
-class EmploymentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EmploymentInfo
-        fields = '__all__'

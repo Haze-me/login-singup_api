@@ -4,7 +4,14 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 # Create your models here.
-class BasicInfo(models.Model):
+class StaffInfo(models.Model):
+      
+    choice_pick = [
+        
+        ('rider', 'Rider'),
+        ('staff', 'Staff'),
+        
+        ]
       
     STATES_IN_NIGERIA = [
         ('AB', 'Abia'),
@@ -50,24 +57,11 @@ class BasicInfo(models.Model):
     date_of_birth = models.DateField()  
     state_of_origin = models.CharField(max_length=20, choices=STATES_IN_NIGERIA) 
     emergence_phone_number = PhoneNumberField(region='NG')
-
-
-    def __str__(self):
-        return {self.full_name}, {self.state_of_origin}
-
-
-class EmploymentInfo(models.Model):
     start_date = models.DateField()
     position_role = models.CharField(max_length=255)
     pay_rate = models.DecimalField(max_digits=10, decimal_places=2)
     bank_details = models.TextField()
-
-
-class OrderInfo(models.Model):
-    choice_pick = [
-        
-        ('rider', 'Rider'),
-        ('staff', 'Staff'),
-        
-        ]
     select_role = models.CharField(max_length=20, choices=choice_pick, default='rider') 
+    
+    def __str__(self):
+        return f"{self.full_name},  {self.state_of_origin},   {self.select_role}"

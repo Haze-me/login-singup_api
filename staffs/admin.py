@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import BasicInfo, EmploymentInfo, OrderInfo
+from .models import StaffInfo
 
 # Register your model
-admin.site.register(BasicInfo)
-admin.site.register(EmploymentInfo)
-admin.site.register(OrderInfo)
+admin.site.register(StaffInfo)

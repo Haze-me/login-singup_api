@@ -4,13 +4,17 @@ import datetime
 from django.conf import settings
 from django.core.mail import send_mail
 from django.urls import reverse
-from rest_framework import status, generics
+from rest_framework import status, generics, permissions
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.contrib.sites.shortcuts import get_current_site
-
 from .models import CustomUser
-from .serializers import RegisterSerializer, LoginSerializer
+from .serializers import RegisterSerializer, LoginSerializer, ChangePasswordSerializer
+from rest_framework.generics import UpdateAPIView, CreateAPIView, GenericAPIView
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import get_user_model
+from .serializers import ChangePasswordSerializer
+from django_rest_passwordreset.views import ResetPasswordRequestToken, ResetPasswordConfirm
+
 
 
 class RegisterView(generics.CreateAPIView):
@@ -117,3 +121,54 @@ class LoginView(generics.GenericAPIView):
             },
             status=status.HTTP_200_OK
         )
+
+
+
+
+class CustomPasswordConfirmView(ResetPasswordConfirm, GenericAPIView):
+    """
+    Confirms the password reset using the token and sets a new password.
+    """
+    pass
+
+class CustomPasswordResetView(ResetPasswordRequestToken, CreateAPIView):
+    """
+    Sends a password reset email with a token.
+    """
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)  # Call parent method
+        
+        return Response({
+            "message": "If the email exists, a password reset link has been sent."
+        }, status=status.HTTP_200_OK)
+
+User = get_user_model()
+
+class ChangePasswordView(UpdateAPIView):
+
+  #  API for changing user password. Requires authentication.
+    permission_classes = [IsAuthenticated]
+    serializer_class = ChangePasswordSerializer
+
+    def get_object(self):
+        return self.request.user  # Get the logged-in user
+
+    def update(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(data=request.data, context={"request": request})
+
+        if serializer.is_valid():
+            user.set_password(serializer.validated_data['new_password'])
+            user.save()
+
+            # Generate new JWT tokens (optional)
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                "message": "Password updated successfully!",
+                "access": str(refresh.access_token),
+                "refresh": str(refresh),
+            }, status=status.HTTP_200_OK)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
