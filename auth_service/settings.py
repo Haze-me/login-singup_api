@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-%lgi5%rwx@0+f9b&06p8$^90beg6y&fi+im#9r3+g=p^q048#@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",  # Local development
@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'rest_framework'
+    'rest_framework',
+    'ride_booking',
+    'phonenumber_field',
+    'staffs'
 ]
 
 MIDDLEWARE = [
