@@ -61,7 +61,10 @@ class StaffInfo(models.Model):
     position_role = models.CharField(max_length=255)
     pay_rate = models.DecimalField(max_digits=10, decimal_places=2)
     bank_details = models.TextField()
-    select_role = models.CharField(max_length=20, choices=choice_pick, default='rider') 
+    select_role = models.CharField(max_length=20, choices=choice_pick, default='rider')
+    document_1 = models.FileField(upload_to='staff_documents/', blank=True, null=True)
+    document_2 = models.FileField(upload_to='staff_documents/', blank=True, null=True)
+
     
     def __str__(self):
         return f"{self.full_name},  {self.state_of_origin},   {self.select_role}"

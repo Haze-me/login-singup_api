@@ -3790,3 +3790,489 @@ File /home/haze/PJ/env/lib/python3.10/site-packages/django/contrib/sessions/seri
 File /home/haze/PJ/env/lib/python3.10/site-packages/django/template/context_processors.py first seen with mtime 1743128250.975256
 File /home/haze/PJ/env/lib/python3.10/site-packages/django/contrib/staticfiles/storage.py first seen with mtime 1743128250.8792536
 File /home/haze/PJ/env/lib/python3.10/site-packages/django/contrib/messages/context_processors.py first seen with mtime 1743128250.674249
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 21:23:49.541952' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 21:23:49.541952', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+Exception while resolving variable 'get_short_name' in template 'admin/index.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+TypeError: 'CustomUser' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'CustomUser' object has no attribute 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [get_short_name] in <SimpleLazyObject: <CustomUser: admin@gmail.com>>
+(0.001) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "users_customuser" ON ("django_admin_log"."user_id" = "users_customuser"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 2 ORDER BY "django_admin_log"."action_time" DESC LIMIT 10; args=(2,); alias=default
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 21:24:09.754158' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 21:24:09.754158', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "django_rest_passwordreset_resetpasswordtoken"; args=(); alias=default
+(0.000) SELECT COUNT(*) AS "__count" FROM "django_rest_passwordreset_resetpasswordtoken"; args=(); alias=default
+(0.000) SELECT "django_rest_passwordreset_resetpasswordtoken"."id", "django_rest_passwordreset_resetpasswordtoken"."user_id", "django_rest_passwordreset_resetpasswordtoken"."created_at", "django_rest_passwordreset_resetpasswordtoken"."key", "django_rest_passwordreset_resetpasswordtoken"."ip_address", "django_rest_passwordreset_resetpasswordtoken"."user_agent", "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "django_rest_passwordreset_resetpasswordtoken" INNER JOIN "users_customuser" ON ("django_rest_passwordreset_resetpasswordtoken"."user_id" = "users_customuser"."id") ORDER BY "django_rest_passwordreset_resetpasswordtoken"."id" DESC; args=(); alias=default
+Exception while resolving variable 'get_short_name' in template 'admin/change_list.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+TypeError: 'CustomUser' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'CustomUser' object has no attribute 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [get_short_name] in <SimpleLazyObject: <CustomUser: admin@gmail.com>>
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 21:24:09.876957' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 21:24:09.876957', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'John@gmail.com' ORDER BY "users_customuser"."id" ASC LIMIT 1; args=('John@gmail.com',); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'John@gmail.com' LIMIT 21; args=('John@gmail.com',); alias=default
+(0.002) INSERT INTO "ride_booking_order" ("from_location", "to_location", "order_type", "amount", "order_description", "customer_name", "phone_number") VALUES ('Gombe', 'Delta', 'Data', '5400.00', 'Urgent delivery', 'Mark Ben', '+2348023453356') RETURNING "ride_booking_order"."id"; args=('Gombe', 'Delta', 'Data', '5400.00', 'Urgent delivery', 'Mark Ben', '+2348023453356'); alias=default
+(0.001) SELECT 1 AS "a" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' LIMIT 1; args=(1, 'koby@gmail.com'); alias=default
+(0.001) INSERT INTO "users_customuser" ("password", "last_login", "is_superuser", "email", "first_name", "last_name", "is_active", "is_staff", "is_verified") VALUES ('', NULL, 0, 'koby@gmail.com', 'Nze', 'koby', 0, 0, 0) RETURNING "users_customuser"."id"; args=('', None, False, 'koby@gmail.com', 'Nze', 'koby', False, False, False); alias=default
+(0.017) UPDATE "users_customuser" SET "password" = 'pbkdf2_sha256$870000$uW8hBdoxwSD7R0ATQuA5c2$4yLdE4IVwMEjmxJJ3Nr1tvmU86dWHEGjdbxnm7ThZpQ=', "last_login" = NULL, "is_superuser" = 0, "email" = 'koby@gmail.com', "first_name" = 'Nze', "last_name" = 'koby', "is_active" = 0, "is_staff" = 0, "is_verified" = 0 WHERE "users_customuser"."id" = 5; args=('pbkdf2_sha256$870000$uW8hBdoxwSD7R0ATQuA5c2$4yLdE4IVwMEjmxJJ3Nr1tvmU86dWHEGjdbxnm7ThZpQ=', False, 'koby@gmail.com', 'Nze', 'koby', False, False, False, 5); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' ORDER BY "users_customuser"."id" ASC LIMIT 1; args=('koby@gmail.com',); alias=default
+Bad Request: /api/auth/login/
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 5 LIMIT 21; args=(5,); alias=default
+(0.014) UPDATE "users_customuser" SET "password" = 'pbkdf2_sha256$870000$uW8hBdoxwSD7R0ATQuA5c2$4yLdE4IVwMEjmxJJ3Nr1tvmU86dWHEGjdbxnm7ThZpQ=', "last_login" = NULL, "is_superuser" = 0, "email" = 'koby@gmail.com', "first_name" = 'Nze', "last_name" = 'koby', "is_active" = 1, "is_staff" = 0, "is_verified" = 1 WHERE "users_customuser"."id" = 5; args=('pbkdf2_sha256$870000$uW8hBdoxwSD7R0ATQuA5c2$4yLdE4IVwMEjmxJJ3Nr1tvmU86dWHEGjdbxnm7ThZpQ=', False, 'koby@gmail.com', 'Nze', 'koby', True, False, True, 5); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' ORDER BY "users_customuser"."id" ASC LIMIT 1; args=('koby@gmail.com',); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' LIMIT 21; args=('koby@gmail.com',); alias=default
+(0.001) INSERT INTO "ride_booking_review" ("customer_name", "customer_review") VALUES ('Koby', 'I need more') RETURNING "ride_booking_review"."id"; args=('Koby', 'I need more'); alias=default
+Unauthorized: /api/auth/change-password/
+Unauthorized: /api/auth/change-password/
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 5 LIMIT 21; args=(5,); alias=default
+(0.011) UPDATE "users_customuser" SET "password" = 'pbkdf2_sha256$870000$P46GKoCMYld1S0ZXQQJBXP$vnALU5y1hnC4yoAjBfS/PgMarRLKlmdfr9CRy6Hc548=', "last_login" = NULL, "is_superuser" = 0, "email" = 'koby@gmail.com', "first_name" = 'Nze', "last_name" = 'koby', "is_active" = 1, "is_staff" = 0, "is_verified" = 1 WHERE "users_customuser"."id" = 5; args=('pbkdf2_sha256$870000$P46GKoCMYld1S0ZXQQJBXP$vnALU5y1hnC4yoAjBfS/PgMarRLKlmdfr9CRy6Hc548=', False, 'koby@gmail.com', 'Nze', 'koby', True, False, True, 5); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' ORDER BY "users_customuser"."id" ASC LIMIT 1; args=('koby@gmail.com',); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."email" = 'koby@gmail.com' LIMIT 21; args=('koby@gmail.com',); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 5 LIMIT 21; args=(5,); alias=default
+(0.020) UPDATE "users_customuser" SET "password" = 'pbkdf2_sha256$870000$4a2uDujijjcOx5w6rI1Y9N$1JS7fTszwrghU5ExOczCwHXWBK9V9eOvMPwi67H7Q9w=', "last_login" = NULL, "is_superuser" = 0, "email" = 'koby@gmail.com', "first_name" = 'Nze', "last_name" = 'koby', "is_active" = 1, "is_staff" = 0, "is_verified" = 1 WHERE "users_customuser"."id" = 5; args=('pbkdf2_sha256$870000$4a2uDujijjcOx5w6rI1Y9N$1JS7fTszwrghU5ExOczCwHXWBK9V9eOvMPwi67H7Q9w=', False, 'koby@gmail.com', 'Nze', 'koby', True, False, True, 5); alias=default
+(0.001) INSERT INTO "staffs_staffinfo" ("full_name", "phone_number", "email", "home_address", "date_of_birth", "state_of_origin", "emergence_phone_number", "start_date", "position_role", "pay_rate", "bank_details", "select_role") VALUES ('Matthew joe', '+2347034562232', 'Joe@gmail.com', 'no. 6 akimorin', '1999-03-05', 'BA', '+2347034562534', '2022-03-04', 'DeVops', '500000.00', 'Joe Matthew, 3087467387, firstbank', 'staff') RETURNING "staffs_staffinfo"."id"; args=('Matthew joe', '+2347034562232', 'Joe@gmail.com', 'no. 6 akimorin', '1999-03-05', 'BA', '+2347034562534', '2022-03-04', 'DeVops', '500000.00', 'Joe Matthew, 3087467387, firstbank', 'staff'); alias=default
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 21:55:35.317854' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 21:55:35.317854', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "django_rest_passwordreset_resetpasswordtoken"."id", "django_rest_passwordreset_resetpasswordtoken"."user_id", "django_rest_passwordreset_resetpasswordtoken"."created_at", "django_rest_passwordreset_resetpasswordtoken"."key", "django_rest_passwordreset_resetpasswordtoken"."ip_address", "django_rest_passwordreset_resetpasswordtoken"."user_agent" FROM "django_rest_passwordreset_resetpasswordtoken" WHERE "django_rest_passwordreset_resetpasswordtoken"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 4 LIMIT 21; args=(4,); alias=default
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'django_rest_passwordreset' AND "django_content_type"."model" = 'resetpasswordtoken') LIMIT 21; args=('django_rest_passwordreset', 'resetpasswordtoken'); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'get_short_name' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+TypeError: 'CustomUser' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'CustomUser' object has no attribute 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [get_short_name] in <SimpleLazyObject: <CustomUser: admin@gmail.com>>
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser"; args=(); alias=default
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 21:55:35.486788' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 21:55:35.486788', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>
+Not Found: /static/admin/img/icon-viewlink.svg
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 22:51:44.651452' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 22:51:44.651452', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) BEGIN; args=None; alias=default
+(0.000) SELECT "django_rest_passwordreset_resetpasswordtoken"."id", "django_rest_passwordreset_resetpasswordtoken"."user_id", "django_rest_passwordreset_resetpasswordtoken"."created_at", "django_rest_passwordreset_resetpasswordtoken"."key", "django_rest_passwordreset_resetpasswordtoken"."ip_address", "django_rest_passwordreset_resetpasswordtoken"."user_agent" FROM "django_rest_passwordreset_resetpasswordtoken" WHERE "django_rest_passwordreset_resetpasswordtoken"."id" = 2 LIMIT 21; args=(2,); alias=default
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 4 LIMIT 21; args=(4,); alias=default
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'django_rest_passwordreset' AND "django_content_type"."model" = 'resetpasswordtoken') LIMIT 21; args=('django_rest_passwordreset', 'resetpasswordtoken'); alias=default
+(0.000) COMMIT; args=None; alias=default
+Exception while resolving variable 'get_short_name' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+TypeError: 'CustomUser' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+AttributeError: 'CustomUser' object has no attribute 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'get_short_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [get_short_name] in <SimpleLazyObject: <CustomUser: admin@gmail.com>>
+(0.000) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser"; args=(); alias=default
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-03-31 22:51:44.845978' AND "django_session"."session_key" = 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk') LIMIT 21; args=('2025-03-31 22:51:44.845978', 'e8f4uv2s5wx7xxmy7xdcf3pu0x5z3mfk'); alias=default
+(0.001) SELECT "users_customuser"."id", "users_customuser"."password", "users_customuser"."last_login", "users_customuser"."is_superuser", "users_customuser"."email", "users_customuser"."first_name", "users_customuser"."last_name", "users_customuser"."is_active", "users_customuser"."is_staff", "users_customuser"."is_verified" FROM "users_customuser" WHERE "users_customuser"."id" = 2 LIMIT 21; args=(2,); alias=default
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>
+Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/usr/local/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'users.urls' from '/app/users/urls.py'> (None:None) 'api/auth/'>], [<URLResolver <module 'ride_booking.urls' from '/app/ride_booking/urls.py'> (None:None) 'api/rides/'>], [<URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>]], 'path': 'static/admin/img/icon-viewlink.svg'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'staffs.urls' from '/app/staffs/urls.py'> (None:None) 'api/staff/'>
+Not Found: /static/admin/img/icon-viewlink.svg
