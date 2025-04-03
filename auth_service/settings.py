@@ -45,9 +45,10 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'rest_framework',
     'django_rest_passwordreset',
+    'phonenumber_field',
     'users',
     'ride_booking',
-    'phonenumber_field',
+    'biz_setting',
     'staffs'
 ]
 
@@ -206,3 +207,25 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# import os
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "handlers": {
+#         "file": {
+#             "level": "DEBUG",
+#             "class": "logging.FileHandler",
+#             "filename": "/home/haze/PJ/auth_service/debug.log",
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["file"],
+#             "level": "DEBUG",
+#             "propagate": True,
+#         },
+#     },
+# }

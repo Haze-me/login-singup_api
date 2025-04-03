@@ -3,7 +3,7 @@ from rest_framework import generics
 from .models import Order, Review, Expense
 from .serializers import OrderSerializer, ReviewSerializer, ExpenseSerializer
 
-class ExpenseCreateView(generics.CreateAPIView):
+class ExpenseCreateView(generics.ListCreateAPIView): # ListCreateAPIView Supports both GET and POST
     queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
     
